@@ -1,11 +1,20 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import Signin from "./pages/Signin"
+import Signup from "./pages/Signup"
+import Profile from "./pages/Profile"
+import About from "./pages/About"
 
 const App = () => {
-  return (
-    <div>
-     <h1 className='text-gray-400'> Welcome to Mern stack application</h1>
-    </div>
-  )
+  return <BrowserRouter>
+  <Routes>
+    <Route path="/sign-in" element={<Signin />} />
+    <Route path="/sign-up" element={<Signup/>} />
+    <Route path="/profile" element={<Profile/>} />
+    <Route path="/about" element={<About/>} />
+    <Route path="/" element={<Home />} />
+  </Routes>
+  </BrowserRouter>
 }
 
 export default App
